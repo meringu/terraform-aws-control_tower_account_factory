@@ -387,3 +387,19 @@ variable "aft_metrics_reporting" {
     error_message = "Valid values for var: aft_metrics_reporting are (true, false)."
   }
 }
+
+#########################################
+# AWS Provider Overrides
+#########################################
+
+variable "provider_profile" {
+  description = "The profile to use for the AWS providers"
+  type        = string
+  default     = ""
+}
+
+variable "provider_shared_config_files" {
+  description = "The shared_config_files to use for the AWS providers"
+  type        = list(string)
+  default     = []
+}
