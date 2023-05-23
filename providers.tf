@@ -8,9 +8,9 @@ provider "aws" {
   shared_config_files = var.provider_shared_config_files
   # The default profile or environment variables should authenticate to the Control Tower Management Account as Administrator
   default_tags {
-    tags = {
+    tags = merge({
       managed_by = "AFT"
-    }
+    }, var.tags)
   }
 }
 
@@ -24,9 +24,9 @@ provider "aws" {
     session_name = local.aft_session_name
   }
   default_tags {
-    tags = {
+    tags = merge({
       managed_by = "AFT"
-    }
+    }, var.tags)
   }
 }
 provider "aws" {
@@ -39,9 +39,9 @@ provider "aws" {
     session_name = local.aft_session_name
   }
   default_tags {
-    tags = {
+    tags = merge({
       managed_by = "AFT"
-    }
+    }, var.tags)
   }
 }
 provider "aws" {
@@ -54,9 +54,9 @@ provider "aws" {
     session_name = local.aft_session_name
   }
   default_tags {
-    tags = {
+    tags = merge({
       managed_by = "AFT"
-    }
+    }, var.tags)
   }
 }
 provider "aws" {
@@ -69,8 +69,8 @@ provider "aws" {
     session_name = local.aft_session_name
   }
   default_tags {
-    tags = {
+    tags = merge({
       managed_by = "AFT"
-    }
+    }, var.tags)
   }
 }

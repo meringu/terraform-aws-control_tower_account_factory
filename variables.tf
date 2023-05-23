@@ -403,3 +403,9 @@ variable "provider_shared_config_files" {
   type        = list(string)
   default     = []
 }
+
+variable "tags" {
+  description = "Additional tags to add to all AWS resources"
+  type        = map(string)
+  default     = {}
+}
